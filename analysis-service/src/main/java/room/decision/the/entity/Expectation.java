@@ -25,4 +25,8 @@ public class Expectation {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @ManyToOne
+    @JoinColumn(name = "choice_analysis_id")
+    private ChoiceAnalysis choiceAnalysis;
 }

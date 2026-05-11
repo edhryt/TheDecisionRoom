@@ -23,6 +23,10 @@ public class Member {
     @Column(name = "username")
     private String username;
 
+    @OneToOne
+    @JoinColumn(name = "rating_id")
+    private Rating rating;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 }

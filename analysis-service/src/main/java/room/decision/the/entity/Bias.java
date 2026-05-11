@@ -17,4 +17,8 @@ public class Bias {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "choice_analysis_id")
+    private ChoiceAnalysis choiceAnalysis;
 }

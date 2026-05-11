@@ -21,9 +21,15 @@ public class ChoiceOption {
     @Column(name = "title")
     private String title;
 
-    @OneToMany
+    @Builder.Default
+    @OneToMany(mappedBy = "choiceOption")
     private List<OptionAdvantage> advantages = new ArrayList<>();
 
-    @OneToMany
+    @Builder.Default
+    @OneToMany(mappedBy = "choiceOption")
     private List<OptionDisadvantage> disadvantages = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "issue_id")
+    private Issue issue;
 }

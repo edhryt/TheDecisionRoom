@@ -29,12 +29,15 @@ public class Issue {
     private Long discussionId;
 
     @OneToOne
+    @JoinColumn(name = "issue_context_id")
     private IssueContext issueContext;
 
     @OneToOne
+    @JoinColumn(name = "met_decision_id")
     private MetDecision metDecision;
 
-    @OneToMany
+    @Builder.Default
+    @OneToMany(mappedBy = "issue")
     private List<ChoiceOption> choiceOptions = new ArrayList<>();
 
     @ManyToOne

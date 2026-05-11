@@ -16,6 +16,7 @@ public class MemberViewPoint {
     private Long id;
 
     @OneToOne
+    @JoinColumn(name = "chosen_option_id")
     private ChoiceOption chosenOption;
 
     @Column(name = "member_id")

@@ -3,6 +3,9 @@ package room.decision.the.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "discussion")
 @Getter
@@ -20,4 +23,8 @@ public class Discussion {
 
     @Column(name = "issueId")
     private Long issueId;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "discussion")
+    private List<Message> messages = new ArrayList<>();
 }

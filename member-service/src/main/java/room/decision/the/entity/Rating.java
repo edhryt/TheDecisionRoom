@@ -17,7 +17,4 @@ public class Rating {
 
     @Column(name = "rate")
     private Float rate;
-
-    @Column(name = "memberId")
-    private Long memberId;
 }

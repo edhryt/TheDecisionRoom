@@ -25,13 +25,13 @@ public class ChoiceAnalysis {
     @Column(name = "creator_id")
     private Long creatorId;
 
-    @OneToMany
+    @OneToMany(mappedBy = "choiceAnalysis")
     private List<Expectation> expectations = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "choiceAnalysis")
     private List<Consequence> consequences = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "choiceAnalysis")
     private List<Bias> biases = new ArrayList<>();
 
     @Column(name = "conclusion")

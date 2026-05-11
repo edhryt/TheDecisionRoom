@@ -17,4 +17,8 @@ public class OptionDisadvantage {
 
     @Column(name = "disadvantage_title")
     private String disadvantageTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "choice_option_id")
+    private ChoiceOption choiceOption;
 }

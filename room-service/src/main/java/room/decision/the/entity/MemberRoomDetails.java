@@ -18,8 +18,9 @@ public class MemberRoomDetails {
     @Column(name = "member_id")
     private Long memberId;
 
-    @Column(name = "room_id")
-    private Long roomId;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     @Column(name = "member_status")
     @Enumerated(EnumType.STRING)

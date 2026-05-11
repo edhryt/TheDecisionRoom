@@ -26,6 +26,10 @@ public class Message {
     @Column(name = "content")
     private String content;
 
+    @ManyToOne
+    @JoinColumn(name = "discussion_id")
+    private Discussion discussion;
+
     @Column(name = "sentAt")
     private LocalDateTime sentAt;
 }
