@@ -15,23 +15,24 @@ import java.time.LocalDateTime;
 public class IssueContext {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "aim")
+    @Column(name = "aim", nullable = false, length = 50)
     private String aim;
 
-    @Column(name = "constraints")
+    @Column(name = "constraints", nullable = false, length = 250)
     private String constraints;
 
-    @Column(name = "given_knowledge")
+    @Column(name = "given_knowledge", nullable = false, length = 250)
     private String givenKnowledge;
-
-    @Column(name = "deadline")
-    private LocalDateTime deadline;
 
     @Column(name = "budget")
     private Double budget;
 
-    @Column(name = "requirements")
+    @Column(name = "requirements", nullable = false, length = 250)
     private String requirements;
+
+    @Column(name = "deadline", nullable = false, updatable = false)
+    private LocalDateTime deadline;
 }

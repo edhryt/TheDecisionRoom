@@ -15,15 +15,16 @@ import java.time.LocalDateTime;
 public class MetDecision {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
     @OneToOne
     @JoinColumn(name = "chosen_option_id")
     private ChoiceOption chosenOption;
 
-    @Column(name = "explanation")
+    @Column(name = "explanation", nullable = false, length = 250)
     private String explanation;
 
-    @Column(name = "made_at")
+    @Column(name = "made_at", nullable = false, updatable = false)
     private LocalDateTime madeAt;
 }

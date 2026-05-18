@@ -14,3 +14,31 @@ The key features include:
 - Exploring trade-offs
 
 The system may be used by both regular users and businesses.
+___
+## Internals
+### Use cases:
+- CreateMember
+- UpdateMember
+- UpdateMemberRating
+- CreateRoom
+- JoinRoom
+- UpdateRoom
+- PublishIssue
+- ChooseOption
+- OpenDiscussion
+- SendMessage
+- CloseDiscussion
+- ExamineBiases
+- OmitPastMistakes (hashtags of mistakes)
+- MakeFinalDecision
+  - the votes number
+  - the overall rates number of all voters of an option
+  - the result of a discussion
+  - the suitable way to the goal
+  - the result of omitting biases
+  - preventing making the same mistakes again
+- CloseIssue
+- CreateDecisionAnalysis
+- UpdateDecisionAnalysis
+- DeleteRoom
+- LeaveRoom

@@ -13,10 +13,11 @@ import lombok.*;
 public class OptionAdvantage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "advantage_title")
-    private String advantageTitle;
+    @Column(name = "title")
+    private String title;
 
     @ManyToOne
     @JoinColumn(name = "choice_option_id")

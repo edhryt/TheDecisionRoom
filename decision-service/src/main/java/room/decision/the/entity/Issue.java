@@ -17,16 +17,21 @@ import java.util.List;
 public class Issue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "room_id")
+    @Column(name = "room_id", nullable = false, updatable = false)
     private Long roomId;
-
-    @Column(name = "creator_id")
-    private Long creatorId;
 
     @Column(name = "discussion_id")
     private Long discussionId;
+
+    @Column(name = "creator_id", nullable = false, updatable = false)
+    private Long creatorId;
+
+    @ManyToOne
+    @JoinColumn(name = "issue_status_id")
+    private IssueStatusEntity issueStatusEntity;
 
     @OneToOne
     @JoinColumn(name = "issue_context_id")
@@ -40,10 +45,6 @@ public class Issue {
     @OneToMany(mappedBy = "issue")
     private List<ChoiceOption> choiceOptions = new ArrayList<>();
 
-    @ManyToOne
-    @JoinColumn(name = "issue_status_id")
-    private IssueStatusEntity issueStatusEntity;
-
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 }

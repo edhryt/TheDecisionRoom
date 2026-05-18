@@ -16,17 +16,18 @@ import java.util.List;
 public class ChoiceOption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 50)
     private String title;
 
     @Builder.Default
-    @OneToMany(mappedBy = "choiceOption")
+    @OneToMany(mappedBy = "choiceOption", cascade = CascadeType.ALL)
     private List<OptionAdvantage> advantages = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(mappedBy = "choiceOption")
+    @OneToMany(mappedBy = "choiceOption", cascade = CascadeType.ALL)
     private List<OptionDisadvantage> disadvantages = new ArrayList<>();
 
     @ManyToOne

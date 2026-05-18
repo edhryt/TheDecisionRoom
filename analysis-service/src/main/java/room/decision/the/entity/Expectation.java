@@ -15,18 +15,19 @@ import java.time.LocalDateTime;
 public class Expectation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 30)
     private String title;
 
-    @Column(name = "is_justified")
+    @Column(name = "is_justified", nullable = false)
     private Boolean isJustified;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
     @ManyToOne
-    @JoinColumn(name = "choice_analysis_id")
-    private ChoiceAnalysis choiceAnalysis;
+    @JoinColumn(name = "decision_analysis_id")
+    private DecisionAnalysis decisionAnalysis;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 }

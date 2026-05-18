@@ -16,15 +16,13 @@ import java.util.List;
 public class Discussion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "roomId")
-    private Long roomId;
-
-    @Column(name = "issueId")
+    @Column(name = "issueId", nullable = false, updatable = false)
     private Long issueId;
 
     @Builder.Default
-    @OneToMany(mappedBy = "discussion")
+    @OneToMany(mappedBy = "discussion", cascade = CascadeType.ALL)
     private List<Message> messages = new ArrayList<>();
 }
