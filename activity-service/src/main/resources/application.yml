@@ -1,0 +1,13 @@
+server:
+  port: ${ACTIVITY_SERVICE_PORT}
+
+spring:
+  application:
+    name: activity-service
+  datasource:
+    url: ${ACTIVITY_SERVICE_DB_URL}
+    username: ${ACTIVITY_SERVICE_DB_USERNAME}
+    password: ${ACTIVITY_SERVICE_DB_PASSWORD}
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect

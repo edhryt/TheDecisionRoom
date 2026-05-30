@@ -1,0 +1,16 @@
+server:
+  port: ${ROOM_SERVICE_PORT}
+
+spring:
+  application:
+    name: room-service
+  datasource:
+    url: ${ROOM_SERVICE_DB_URL}
+    username: ${ROOM_SERVICE_DB_USERNAME}
+    password: ${ROOM_SERVICE_DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092

@@ -1,16 +1,10 @@
 ### Entities:
 - Room(id, name, username, createdAt)
-- MemberRoomDetails(id, memberId, status)
+- MemberDetails(id, memberId, roomId, memberStatus)
 
-### Aggregates:
-- RoomAggregate:
-  - Components:
-    - Room
-    - MemberRoomDetails
-  - Invariants:
-    - member cannot join non-existent room
-    - member cannot join twice a room
-    - member cannot join more than 20 rooms
-    - member cannot leave a room if they aren't its participant
-    - member cannot rejoin a room if they were banned
-    - member cannot create more than 20 rooms
+### Invariants:
+- member cannot join non-existent room
+- member cannot join twice a room
+- member cannot leave a room if they aren't its participant
+- member cannot rejoin a room if they were banned
+- the overall member's room count cannot be greater than 10

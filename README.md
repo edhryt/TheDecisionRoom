@@ -17,9 +17,10 @@ The system may be used by both regular users and businesses.
 ___
 ## Internals
 ### Use cases:
-- CreateMember
-- UpdateMember
-- UpdateMemberRating
+- CreateUser
+- UpdateUser
+- UpdateUserRating
+- DeleteUser
 - CreateRoom
 - JoinRoom
 - UpdateRoom

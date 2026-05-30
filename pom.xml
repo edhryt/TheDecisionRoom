@@ -12,9 +12,10 @@
         <module>activity-service</module>
         <module>discussion-service</module>
         <module>room-service</module>
-        <module>member-service</module>
+        <module>user-service</module>
         <module>decision-service</module>
         <module>analysis-service</module>
+        <module>api-gateway</module>
     </modules>
 
     <properties>
@@ -34,6 +35,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
         <dependency>

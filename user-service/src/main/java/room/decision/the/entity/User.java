@@ -4,17 +4,15 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "room")
+@Table(name = "user")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Room {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false, updatable = false)
@@ -25,6 +23,9 @@ public class Room {
 
     @Column(name = "username", nullable = false, unique = true, length = 20)
     private String username;
+
+    @Column(name = "rate", nullable = false)
+    private Float rate;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
